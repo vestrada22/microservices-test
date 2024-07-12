@@ -15,5 +15,6 @@ public class ProductRequest {
     private String name;
     private String description;
     private Double price;
+    private String image;
     private Boolean status;
 }

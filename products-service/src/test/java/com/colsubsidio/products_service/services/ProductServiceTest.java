@@ -42,6 +42,7 @@ class ProductServiceTest {
                 .name("Calculator")
                 .description("Best calculator ever created")
                 .price(20.0)
+                .image("https://off.com.ph/-/media/images/off/ph/products-en/update-983/plp/overtime-group-plp.png")
                 .status(true)
                 .build();
 
@@ -51,6 +52,7 @@ class ProductServiceTest {
                 .name("Calculator")
                 .description("Best calculator ever created")
                 .price(20.0)
+                .image("https://off.com.ph/-/media/images/off/ph/products-en/update-983/plp/overtime-group-plp.png")
                 .status(true)
                 .build();
     }
@@ -72,6 +74,7 @@ class ProductServiceTest {
         assertEquals(product.getName(), productResponses.get(0).getName());
         assertEquals(product.getDescription(), productResponses.get(0).getDescription());
         assertEquals(product.getPrice(), productResponses.get(0).getPrice());
+        assertEquals(product.getImage(), productResponses.get(0).getImage());
         assertEquals(product.getStatus(), productResponses.get(0).getStatus());
 
         verify(productRepository, times(1)).findAll();
@@ -90,6 +93,7 @@ class ProductServiceTest {
         assertEquals(productRequest.getName(), product.getName());
         assertEquals(productRequest.getDescription(), product.getDescription());
         assertEquals(productRequest.getPrice(), product.getPrice());
+        assertEquals(productRequest.getImage(), product.getImage());
         assertEquals(productRequest.getStatus(), product.getStatus());
     }
 

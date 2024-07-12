@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_DB: ms_inventory
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 221293
+      POSTGRES_PASSWORD: postgres
     volumes:
       - ./postgres:/var/lib/postgresql/data
     ports:
@@ -21,7 +21,7 @@ services:
     environment:
       MYSQL_DATABASE: ms_orders
       MYSQL_USER: root
-      MYSQL_PASSWORD: 221293
+      MYSQL_PASSWORD:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - ./mysql:/var/lib/mysql
@@ -37,7 +37,7 @@ services:
     environment:
       POSTGRES_DB: ms_products
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 221293
+      POSTGRES_PASSWORD: postgres
     volumes:
       - ./postgres:/var/lib/postgresql/data
     ports:

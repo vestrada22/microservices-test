@@ -25,6 +25,7 @@ public class ProductService {
                 .name(product.getName())
                 .description(product.getDescription())
                 .price(product.getPrice())
+                .image(product.getImage())
                 .status(product.getStatus())
                 .build();
 
@@ -49,6 +50,7 @@ public class ProductService {
         product.setName(request.getName());
         product.setDescription(request.getDescription());
         product.setPrice(request.getPrice());
+        product.setImage(request.getImage());
         product.setStatus(request.getStatus());
 
         productRepository.save(product);
@@ -76,6 +78,9 @@ public class ProductService {
         if (request.getPrice() == null) {
             throw new IllegalArgumentException("Price cannot be null or negative");
         }
+        if (request.getImage() == null || request.getImage().isEmpty()) {
+            throw new IllegalArgumentException("Image cannot be null or empty");
+        }
         if (request.getStatus() == null) {
             throw new IllegalArgumentException("Status cannot be null or empty");
         }
@@ -88,6 +93,7 @@ public class ProductService {
                 .name(product.getName())
                 .description(product.getDescription())
                 .price(product.getPrice())
+                .image(product.getImage())
                 .status(product.getStatus())
                 .build();
     }

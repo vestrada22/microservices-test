@@ -49,6 +49,7 @@ class ProductControllerTest {
                 .name("Xbox")
                 .description("Microsoft console")
                 .price(20.0)
+                .image("https://off.com.ph/-/media/images/off/ph/products-en/update-983/plp/overtime-group-plp.png")
                 .status(true)
                 .build();
 
@@ -58,6 +59,7 @@ class ProductControllerTest {
                 .name("Xbox")
                 .description("Microsoft console")
                 .price(20.0)
+                .image("https://off.com.ph/-/media/images/off/ph/products-en/update-983/plp/overtime-group-plp.png")
                 .status(true)
                 .build();
     }
@@ -85,6 +87,7 @@ class ProductControllerTest {
                 .andExpect(jsonPath("$[0].name").value(productResponse.getName()))
                 .andExpect(jsonPath("$[0].description").value(productResponse.getDescription()))
                 .andExpect(jsonPath("$[0].price").value(productResponse.getPrice()))
+                .andExpect(jsonPath("$[0].image").value(productResponse.getImage()))
                 .andExpect(jsonPath("$[0].status").value(productResponse.getStatus()));
     }
 
